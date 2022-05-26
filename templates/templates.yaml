@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mycm
+data:
+{{- range $i, $v :=  .Values.arr }}
+  testkey-{{ $i }}: {{ $v -}}
+{{ end -}}
